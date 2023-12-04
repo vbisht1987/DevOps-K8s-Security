@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        sh '${MVN_HOME}mvn clean package'
+        sh '${MVN_HOME}/bin/mvn clean package'
       }
     }
     stage ('SonarQube Analyses') {
      steps {
           withSonarQubeEnv('sonar6') {
-            sh '${MVN_HOME}\\bin\\mvn sonar:sonar'
+            sh '${MVN_HOME}/bin/mvn sonar:sonar'
           }
      }
     }
