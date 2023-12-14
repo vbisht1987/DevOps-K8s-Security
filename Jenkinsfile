@@ -9,7 +9,7 @@ pipeline {
     stage ('SonarQube Analyses') {
      steps {
           withSonarQubeEnv('sonar6') {
-            sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.29.109:8094 -Dsonar.login=admin -Dsonar.password=Bulg@ri@8030'
+            sh 'mvn sonar:sonar -Dsonar.host.url=http://192.168.29.109:8094 -Dsonar.token=jenkins-pipeline'
           }
      }
     }
